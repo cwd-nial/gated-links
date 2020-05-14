@@ -9,9 +9,9 @@
 </head>
 
 <body>
-<?php if ($_GET['ref']): ?>
+<?php if ($_GET['url']): ?>
     <h2>Go ahead, google it, SUCKER! :D</h2>
-    <a href="<?= $_GET['ref'] ?>"><?= $_GET['ref'] ?></a>
+    <a href="<?= $_GET['url'] ?>"><?= $_GET['url'] ?></a>
 <?php else: ?>
     <h2>So you want this information?</h2>
     <a href="http://localhost/gate-check.php?ref=1">Get rich in 5 hours! (PDF download)</a><br>
