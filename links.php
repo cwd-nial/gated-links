@@ -15,7 +15,8 @@
 <?php else: ?>
     <h2>So you want this information?</h2>
     <a href="http://localhost/gate-check.php?ref=1">Get rich in 5 hours! (PDF download)</a><br>
-    <a href="http://localhost/gate-check.php?ref=2">Get a six pack fast! (PDF download)</a>
+    <a href="http://localhost/gate-check.php?ref=2">Get a six pack fast! (PDF download)</a><br>
+    <a href="http://localhost/gate-check.php?ref=3&logged-in=1">Understand the meaning of life... (PDF download)</a>
 <?php endif; ?>
 </body>
 </html>

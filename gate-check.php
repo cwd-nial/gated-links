@@ -1,4 +1,18 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+function ftpServerGetUrl($ref)
+{
+    $csvFile = file('urls.csv');
+    $data = [];
+    foreach ($csvFile as $line) {
+        $t = str_getcsv($line);
+        $data[$t[0]] = $t[1];
+    }
+
+    return $data[$ref];
+}
+
+?>
     <!doctype html>
 
     <html lang="en">
@@ -12,19 +26,12 @@
     <body>
     <h2>gate-check</h2>
     <?php
-    if ($_POST['submit']) {
+    if ($_GET['logged-in'] === '1') {
+        $url = ftpServerGetUrl($_GET['ref']);
+        header('Location: links.php?ref=' . $url);
+    } elseif ($_POST['submit']) {
         if ($_POST['email'] === 'kung-lao@mk11.com' && $_POST['password'] === 'you-loose') {
-
-            switch ($_POST['ref']) {
-                case 1:
-                    $url = "https://www.google.com/search?q=Get+rich+in+5+hours!";
-                    break;
-                case 2:
-                    $url = "https://www.google.com/search?q=Get+a+six+pack+fast!";
-                    break;
-                default:
-                    $url = "";
-            }
+            $url = ftpServerGetUrl($_POST['ref']);
             header('Location: links.php?ref=' . $url);
         } else {
             header('Location: gate-check.php?error=wrong');
