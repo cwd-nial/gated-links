@@ -48,16 +48,12 @@ function ftpServerGetUrl($ref)
             <input name="submit" type="submit" value="submit">
             <input name="ref" type="hidden" value="<?= $_GET['ref'] ?>">
         </form>
-        <?php
-        if (isset($_GET['error'])) {
-            ?>
+        <?php if (isset($_GET['error'])) : ?>
             <br>
-            <red>credentials are wrong!</red><br>
+            <i>credentials are wrong!</i><br>
             <sub>HINT: try with "kung-lao@mk11.com" AND "you-loose" ;)</sub>
-            <?php
-        }
-    }
-    ?>
+        <?php endif;
+    } ?>
     </body>
     </html>
 <?php ob_end_flush(); ?>
